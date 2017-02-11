@@ -1,0 +1,293 @@
+010000;Natural Sciences
+020000;Engineering and Technology
+030000;Medical and Health Sciences
+040000;Agricultural Sciences
+050000;Social Sciences
+060000;Humanities
+010100;Mathematics
+010200;Computer and information sciences
+010300;Physical sciences and astronomy
+010400;Chemical sciences
+010500;Earth and related environmental sciences
+010600;Biological sciences
+010700;Other natural sciences
+020100;Civil engineering
+020200;Electrical eng, electronic eng
+020300;Mechanical engineering
+020400;Chemical engineering
+020500;Materials engineering
+020600;Medical engineering
+020700;Environmental engineering
+020800;Environmental biotechnology
+020900;Industrial biotechnology
+021000;Nano-technology
+021100;Other engineering and technologies
+030100;Basic medical research
+030200;Clinical medicine
+030300;Health sciences
+040100;Agriculture, forestry, fisheries
+040200;Animal and dairy science
+040300;Veterinary science
+040400;Other agricultural science
+050100;Psychology
+050200;Economics and business
+050300;Educational sciences
+050400;Sociology
+050500;Law
+050600;Political science
+050700;Social and economic geography
+050800;Media and communication
+050900;Other social sciences
+060100;History and archaeology
+060200;Languages and literature
+060300;Philosophy, ethics and religion
+060400;Art
+060500;Other Humanities
+0101PN;Mathematics, applied
+0101PO;Mathematics, interdisciplinary applications
+0101PQ;Mathematics
+0101UR;Physics, mathematical
+0101XY;Statistics & probability
+0102EP;Computer science, artificial intelligence
+0102ER;Computer science, cybernetics
+0102ET;computer science, information systems
+0102EV;computer science, interdisciplinary applications
+0102EW;computer science, software engineering
+0102EX;computer science, theory & methods
+0103AA;Acoustics
+0103BU;Astronomy & astrophysics
+0103SY;Optics
+0103UB;Physics, applied
+0103UF;Physics, fluids & plasmas
+0103UH;Physics, atomic, molecular & chemical
+0103UI;Physics, multidisciplinary
+0103UK;Physics, condensed matter
+0103UN;Physics, nuclear
+0103UP;Physics, particles & fields
+0104DW;Chemistry, applied
+0104DY;Chemistry, multidisciplinary
+0104EA;Chemistry, analytical
+0104EC;Chemistry, inorganic & nuclear
+0104EE;Chemistry, organic
+0104EI;Chemistry, physical
+0104FI;Crystallography
+0104HQ;Electrochemistry
+0104UY;Polymer science
+0105GC;Geochemistry & geophysics
+0105JA;Environmental sciences
+0105KV;Geography, physical
+0105KY;Geology
+0105LE;Geosciences, multidisciplinary
+0105QQ;Meteorology & atmospheric sciences
+0105RE;Mineralogy
+0105SI;Oceanography
+0105TE;Paleontology
+0105ZR;Water resources
+0106BD;Biodiversity conservation
+0106CO;Biochemical research methods
+0106CQ;Biochemistry & molecular biology
+0106CU;Biology
+0106DA;Biophysics
+0106DE;Plant sciences
+0106DR;Cell biology
+0106GU;Ecology
+0106HT;Evolutionary biology
+0106HY;Developmental biology
+0106IY;Entomology
+0106KM;Genetics & Heredity
+0106MC;Mathematical & computational biology
+0106OU;Limnology
+0106PI;Marine & freshwater biology
+0106QU;Microbiology
+0106RQ;Mycology
+0106TA;Ornithology
+0106WF;reproductive biology
+0106ZE;virology
+0107RO;Multidisciplinary sciences
+0201FA;Construction & building technology
+0201IM;Engineering, civil
+0201YR;Transportation science & technology
+0202AC;Automation & control systems
+0202ES;computer science, hardware & architecture
+0202EU;Communication
+0202IQ;Engineering, electrical & electronic
+0202RB;Robotics
+0202YE;Telecommunications
+0203AI;Engineering, aerospace
+0203DT;Thermodynamics
+0203IU;Engineering, mechanical
+0203PU;Mechanics
+0203RY;Nuclear science & technology
+0204II;Engineering, chemical
+0205PJ;Materials science, paper & wood
+0205PK;Materials science, ceramics
+0205PM;Materials science, multidisciplinary
+0205PZ;metallurgy & metallurgical engineering
+0205QF;Materials science, characterization & testing
+0205QG;Materials science, coatings & films
+0205QH;Materials science, composites
+0205QJ;Materials science, textiles
+0206CT;Cell & tissue engineering
+0206IG;Engineering, biomedical
+0206PW;Medical laboratory technology
+0207ID;Energy & fuels
+0207IH;Engineering, environmental
+0207IL;Engineering, marine
+0207IO;Engineering, ocean
+0207IP;Engineering, petroleum
+0207IX;Engineering, geological
+0207SR;Remote sensing
+0207ZQ;Mining & mineral processing
+0208DB;Biotechnology & applied microbiology
+0209QE;Materials science, biomaterials
+0210NS;Nanoscience & nanotechnology
+0211IF;Engineering, multidisciplinary
+0211IJ;Engineering, industrial
+0211IK;Engineering, manufacturing
+0211JY;Food science & technology
+0211OA;Instruments & Instrumentation
+0211RA;Microscopy
+0211UE;Imaging science & photographic technology
+0211XQ;Spectroscopy
+0301AY;Anatomy & morpheology
+0301DX;Chemistry, medicinal
+0301EQ;Psychology, clinical
+0301NI;Immunology
+0301QA;Medicine, research & experimental
+0301RU;Neurosciences
+0301TM;Pathology
+0301TU;Pharmacology & pharmacy
+0301UM;Physiology
+0301YO;Toxicology
+0302AQ;Allergy
+0302AZ;Andrology
+0302BA;Anesthesiology
+0302DM;Oncology
+0302DQ;Cardiac & cardiovascular systems
+0302DS;Critical care medicine
+0302FF;Emergency medicine
+0302FY;Dentistry,oral surgery & medicine
+0302GA;Dermatology
+0302IA;Endocrinology & metabolism
+0302KI;Gastroenterology & hepatology
+0302LI;Geriatrics & gerontology
+0302LJ;Gerontology
+0302MA;Hematology
+0302OI;Integrative & complementary medicine
+0302PY;Medicine, general & internal
+0302RT;Clinical neurology
+0302RX;Neuroimaging
+0302SD;Obstetrics & gynecology
+0302SU;Ophthalmology
+0302TC;Orthopedics
+0302TD;Otorhinolaryngology
+0302TQ;Pediatrics
+0302VE;Psychiatry
+0302VY;Radiology, nuclear medicine & medical imaging
+0302WE;Respiratory system
+0302WH;Rheumatology
+0302YA;Surgery
+0302YP;Transplantation
+0302ZD;Peripheral vascular disease
+0303GM;Substance abuse
+0303HL;Health care sciences & services
+0303LQ;Health policy & services
+0303ML;Primary health care
+0303NE;Public, environmental & occupational health
+0303NN;Infectious diseases
+0303OO;Medical ethics
+0303OP;Medicine, legal
+0303PT;Medical informatics
+0303RZ;Nursing
+0303SA;Nutrition & Dietetics
+0303TI;Parasitology
+0303VP;Psychology, psychoanalysis
+0303WC;Rehabilitation
+0303WV;Social sciences, biomedical
+0303XW;Sport sciences
+0303YU;Tropical medicine
+0401AH;Agriculture, multidisciplinary
+0401AM;Agronomy
+0401JU;Fisheries
+0401KA;Forestry
+0401MU;Horticulture
+0401XE;Soil science
+0402AD;Agriculture, dairy & animal science
+0403ZC;Veterinary sciences
+040500;Some other agricultural science
+0405AE;Agricultural engineering
+0405JY;Food science & technology
+0501BV;Psychology, biological
+0501CN;Behavioral sciences
+0501HI;Psychology, educational
+0501JI;Ergonomics
+0501MY;Psychology, developmental
+0501NQ;Psychology, applied
+0501VI;Psychology
+0501VJ;Psychology, multidisciplinary
+0501VS;Psychology, mathematical
+0501VX;Psychology, experimental
+0501WQ;Psychology, social
+0502DI;Business
+0502DK;Business, finance
+0502GY;Economics
+0502NM;Industrial relations & labor
+0502PC;Management
+0502PE;Operations research & management science
+0503HA;Education & educational research
+0503HB;Education, scientific disciplines
+0503HE;Education, special
+0504BF;Anthropology
+0504FU;Demography
+0504JM;Ethnic studies
+0504JO;Family studies
+0504PS;Social sciences mathematical methods
+0504WM;Social issues
+0504WY;Social work
+0504XA;Sociology
+0504ZK;Women&
+0505FE;Criminology & penology
+0505OM;Law
+0506OE;International relations
+0506UU;Political science
+0506VM;Public administration
+0507BM;Area studies
+0507JB;Environmental studies
+0507KU;Geography
+0507UQ;Planning & development
+0507YQ;Transportation
+0507YY;Urban studies
+0508NU;Information science& library science
+0509EN;Cultural studies
+0509MW;hospitality, leisure, sport & tourism
+0509OR;Asian studies
+0509WU;Social sciences, interdisciplinary
+0601BI;Archaeology
+0601MM;History
+0601MQ;History & philosophy of science
+0601MR;History of social sciences
+0601QK;Medieval & renaissance studies
+0602EO;Classics
+0602JW;Folklore
+0602OT;Linguistics
+0602OX;Literary theory & criticism
+0602OY;Language & linguistics
+0602OZ;Literary reviews
+0602PA;Literature
+0602PD;Literature, African, Australian, Canadian
+0602PF;Literature, American
+0602PG;Literature, British isles
+0602PH;Literature, German, Dutch, Scandinavian
+0602QC;Literature, romance
+0602QD;Literature, Slavic
+0602UT;Poetry
+0603HF;Ethics
+0603UA;Philosophy
+0603YI;Religion
+0604BK;Architecture
+0604BP;Art
+0604FS;Dance
+0604JS;Film, radio, television
+0604RP;Music
+0604YG;Theater
+0605BQ;Humanities, multidisciplinary
