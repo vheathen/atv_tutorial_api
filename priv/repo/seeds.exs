@@ -13,6 +13,35 @@ require Logger
 alias AtvApi.Repo
 import Ecto.Query
 
+### OECD FOS dictionary ###
+alias AtvApi.Fos
+
+unless Repo.one!(from f in Fos, select: count(f.id)) > 0 do
+
+  multi = File.read!("priv/repo/oecd_fos.txt")
+          |> String.split("\n")
+          |> Enum.reject(fn(row) -> byte_size(row) < 1 end)
+          |> Enum.sort
+          |> Enum.dedup
+          |> Enum.reduce(Ecto.Multi.new, fn(row, multi) ->
+
+                [id, title] = row
+                               |> String.trim
+                               |> String.split(";")
+
+                changeset = Fos.changeset(%Fos{}, %{id: id, title: title})
+
+                Ecto.Multi.insert(multi, id, changeset)
+
+             end)
+
+  Repo.transaction(multi)
+
+  Logger.info "OECD FOS load complete"
+
+end
+### OECD FOS dictionary ###
+
 ### Grnti dictionary ###
 
 alias AtvApi.Grnti
