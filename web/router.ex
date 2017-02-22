@@ -9,5 +9,6 @@ defmodule AtvApi.Router do
     pipe_through :api
 
     get "/fos", FosController, :index
+    get "/grnti/:id", GrntiController, :show
   end
 end

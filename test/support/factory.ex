@@ -2,11 +2,20 @@ defmodule AtvApi.Factory do
   use ExMachina.Ecto, repo: AtvApi.Repo
 
   import AtvApi.FactoryFosList, only: [fos_list: 0]
+  import AtvApi.FactoryGrntiList, only: [grnti_list: 0]
 
   def fos_factory do
     %AtvApi.Fos{
       id: "0",
       title: "Some science-technology name",
+    }
+  end
+
+  def grnti_factory do
+    %AtvApi.Grnti{
+      id: 0,
+      title: "Some grnti chapter name",
+      has_children: false,
     }
   end
 
@@ -24,8 +33,25 @@ defmodule AtvApi.Factory do
     build_all(factory_name, true)
   end
 
+  def get_descendants(:grnti, -1) do
+    grnti_list()
+    |> Enum.filter(fn(%{id: id}) ->
+         rem(id, 10000) == 0
+       end)
+  end
+  def get_descendants(:grnti, parent_id) when rem(parent_id, 10000) == 0 do
+    grnti_list()
+    |> Enum.filter(fn(%{id: id}) ->
+         id
+         rem(id, 10000) == 0
+       end)
+  end
+
   defp get_list(:fos) do
     fos_list()
+  end
+  defp get_list(:grnti) do
+    grnti_list()
   end
   defp get_list(_) do
     []

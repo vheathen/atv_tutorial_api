@@ -16,4 +16,14 @@ defmodule AtvApi.Grnti do
     |> cast(params, [:id, :title, :has_children])
     |> validate_required([:id, :title, :has_children])
   end
+
+  def descendants(parent_id) when is_binary(parent_id) do
+    parent_id
+    |> String.to_integer
+    |> descendants
+  end
+  def descendants(parent_id) when parent_id == -1 do
+    from g in AtvApi.Grnti,
+    where: fragment("mod(?, ?)", g.id, 10000) == 0
+  end
 end
