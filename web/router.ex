@@ -7,5 +7,7 @@ defmodule AtvApi.Router do
 
   scope "/api", AtvApi do
     pipe_through :api
+
+    get "/fos", FosController, :index
   end
 end
