@@ -2,7 +2,8 @@ defmodule AtvApi.Grnti do
   use AtvApi.Web, :model
 
   schema "grnti" do
-    field :name, :string
+    field :title, :string
+    field :has_children, :boolean, default: false
 
     timestamps()
   end
@@ -12,7 +13,7 @@ defmodule AtvApi.Grnti do
   """
   def changeset(struct, params \\ %{}) do
     struct
-    |> cast(params, [:id, :name])
-    |> validate_required([:id, :name])
+    |> cast(params, [:id, :title, :has_children])
+    |> validate_required([:id, :title, :has_children])
   end
 end

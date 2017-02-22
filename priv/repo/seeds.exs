@@ -48,46 +48,54 @@ alias AtvApi.Grnti
 
 unless Repo.one!(from g in Grnti, select: count(g.id)) > 0 do
 
-  { multi, _ } = File.read!("priv/repo/grnti.txt")
-                 |> String.split("\n")
-                 |> Enum.reject(fn(row) -> byte_size(row) < 1 end)
-                 |> Enum.reduce({Ecto.Multi.new, []}, fn(row, {multi, ids}) ->
-
-                      # Удалим ненужные символы из начала и окончания строки
-                      row = String.trim(row)
-
-                      # Распарсим строку с помощью регулярного выражения и получим
-                      # id в виде строки от "00" до "99.99.99"
-                      [_, id, name] = Regex.run(~r/([\d.]{2,8})\s+(.*)/ui, row)
-
-                      # Уберём точки
-                      id = String.replace id, ".", ""
-
-                      # См. описание в тексте
-                      int_id = String.to_integer(id) *
-                        case id do
-                          <<_::16>> -> 10000
-                          <<_::32>> -> 100
-                                  _ -> 1
-                        end
-
-                      # Так как в исходном файле пристутсвуют дубликаты, проверим
-                      # и если такой id уже был - выдаём предупреждение и возвращаем
-                      # предыдущую версию кортежа-аккумулятора
-                      if int_id in ids do
-                        Logger.warn "Duplicate: #{row}"
-                        { multi, ids }
-
-                      # Если id новый, то добавляем к Ecto.Multi новую операцию, а
-                      # к списку id - текущий id.
-                      # Напомню, что любая функция в Elixir возвращает результат
-                      # последней операции, в нашем случае - кортеж из двух элементов
-                      else
-                        changeset = Grnti.changeset(%Grnti{}, %{id: int_id, name: name})
-                        { Ecto.Multi.insert(multi, id, changeset), ids ++ [int_id] }
-                      end
-
-                   end)
+  multi = File.read!("priv/repo/grnti.txt")
+           |> String.split("\n")
+           |> Enum.reject(fn(row) -> byte_size(row) < 2 end)
+           |> Enum.reduce(%{}, fn(row, acc) ->
+  
+                {id, parent_id, title} =
+                  case <<String.trim(row)::binary>> do
+                    <<a::binary-size(2), ".",
+                      b::binary-size(2), ".",
+                      c::binary-size(2), " ",
+                      title::binary>> ->
+                                  { String.to_integer("#{a}#{b}#{c}"), String.to_integer("#{a}#{b}00"), title }
+  
+                    <<a::binary-size(2), ".",
+                      b::binary-size(2), " ",
+                      title::binary>> ->
+                                  { String.to_integer("#{a}#{b}00"), String.to_integer("#{a}0000"), title }
+  
+                    <<a::binary-size(2), " ",
+                      title::binary>> ->
+                                  { String.to_integer("#{a}0000"), -1, title }
+                  end
+  
+                parent =
+                  case Map.get(acc, parent_id) do
+                    nil          -> {"", true}
+                    {p_title, _} -> {p_title, true}
+                  end
+  
+                current =
+                  case Map.get(acc, id) do
+                    nil               -> {title, false}
+                    {_, has_children} -> {title, has_children}
+                  end
+  
+                acc
+                |> Map.put(id, current)
+                |> Map.put(parent_id, parent)
+              end)
+  
+           |> Enum.reduce(Ecto.Multi.new, fn({id, {title, has_children}}, multi) ->
+                if id > -1 do
+                  changeset = Grnti.changeset(%Grnti{}, %{id: id, title: String.trim(title), has_children: has_children})
+                  Ecto.Multi.insert(multi, "#{id}", changeset)
+                else
+                  multi
+                end
+              end)
 
   Repo.transaction(multi)
 

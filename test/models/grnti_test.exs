@@ -3,7 +3,7 @@ defmodule AtvApi.GrntiTest do
 
   alias AtvApi.Grnti
 
-  @valid_attrs %{name: "some content", id: 100001}
+  @valid_attrs %{title: "some content", has_children: true, id: 100001}
   @invalid_attrs %{}
 
   test "changeset with valid attributes" do
