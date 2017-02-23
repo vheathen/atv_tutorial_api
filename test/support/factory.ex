@@ -42,8 +42,16 @@ defmodule AtvApi.Factory do
   def get_descendants(:grnti, parent_id) when rem(parent_id, 10000) == 0 do
     grnti_list()
     |> Enum.filter(fn(%{id: id}) ->
-         id
-         rem(id, 10000) == 0
+         rem(id, 100) == 0 and
+         id > parent_id and
+         id < parent_id + 10000
+       end)
+  end
+  def get_descendants(:grnti, parent_id) when rem(parent_id, 100) == 0 do
+    grnti_list()
+    |> Enum.filter(fn(%{id: id}) ->
+         id > parent_id and
+         id < parent_id + 100
        end)
   end
 
